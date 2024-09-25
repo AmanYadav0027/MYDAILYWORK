@@ -1,0 +1,258 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #3498db, #8e44ad);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1, h2 {
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    margin: 10px 0;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button.red {
+    background-color: #FF4B5C;
+}
+
+button.red:hover {
+    background-color: #FF2E3A;
+}
+
+button:active {
+    transform: scale(1);
+}
+
+/* Container and Page Styling */
+.page {
+    display: none;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.page.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Timer and Progress Bar Styling */
+#quiz-timer {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+#progress-container {
+    background-color: #f3f3f3;
+    border-radius: 15px;
+    height: 20px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+#progress-bar {
+    background-color: #4CAF50;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    transition: width 0.3s ease;
+}
+
+/* Hover Effects for Buttons */
+button:hover {
+    background-color: #4CAF60;
+}
+
+button.red:hover {
+    background-color: #FF6F61;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .page {
+        padding: 20px;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+    }
+}
+
+/* Additional Styling for Forms and Lists */
+input {
+    background-color: #fff;
+    border: 2px solid #ddd;
+}
+
+#questions-container {
+    padding: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+ul li:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.02);
+}
+
+/* Styling for Quiz Results */
+#quiz-results p {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+#quiz-results p span {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Making Forms and Quizzes More User-Friendly */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#quiz-questions {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+label {
+    font-size: 16px;
+    margin: 5px 0;
+    display: block;
+}
+
+/* Styling the label that contains radio buttons */
+label {
+    display: flex;
+    align-items: center; /* Align the radio button and text vertically */
+    font-size: 18px;
+    margin: 10px 0;
+    cursor: pointer;
+    padding-left: 30px; /* Ensure spacing for the radio button */
+    position: relative;
+}
+
+/* Custom radio button appearance */
+label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; /* Space between the radio button and text */
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    left: 0; /* Align radio to the left */
+}
+
+/* Hide the default radio input but make it clickable */
+.option {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Change appearance when radio is checked */
+.option:checked + label::before {
+    background-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.6);
+}
+
+/* Optional: Hover effect */
+label:hover::before {
+    border-color: #2980b9;
+}
+
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 600px) {
+    label {
+        font-size: 16px;
+    }
+    label::before {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Quiz Maker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <h1>Welcome to Quiz Maker</h1>
+        <div id="auth-section" class="origin">
+            <h2 id="auth-title">Login or Register</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="registerUser()">Register</button>
+            <button onclick="loginUser()">Login</button>
+        </div>
+        <div id="quiz-actions" class="hidden">
+            <button onclick="showCreateQuiz()">Create a Quiz</button>
+            <button onclick="showQuizList()">Take a Quiz</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <!-- Quiz Creation Form -->
+    <div id="create-quiz" class="page hidden">
+        <h2>Create a New Quiz</h2>
+        <input type="text" id="quiz-title" placeholder="Quiz Title">
+        <div id="questions-container"></div>
+        <button onclick="addQuestion()">Add Question</button>
+        <button onclick="saveQuiz()">Save Quiz</button>
+        <button onclick="goHome()">Cancel</button>
+    </div>
+
+    <!-- Quiz Listing -->
+    <div id="quiz-list" class="page hidden">
+        <h2>Available Quizzes</h2>
+        <ul id="quizzes"></ul>
+        <button onclick="goHome()">Go Home</button>
+    </div>
+
+    <!-- Quiz Taking Section -->
+    <div id="take-quiz" class="page hidden">
+        <h2 id="quiz-title-display"></h2>
+        <div id="quiz-timer">Time Left: <span id="time-left"></span></div>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <div id="quiz-questions"></div>
+        <button onclick="submitQuiz()">Submit Quiz</button>
+    </div>
+
+    <!-- Quiz Results -->
+    <div id="quiz-results" class="page hidden">
+        <h2>Your Results</h2>
+        <p>Correct Answers: <span id="correct-answers"></span></p>
+        <p>Incorrect Answers: <span id="incorrect-answers"></span></p>
+        <button onclick="goHome()">Go Home</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
